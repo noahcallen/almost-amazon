@@ -1,34 +1,13 @@
 import client from '../utils/client';
-
 // API CALLS FOR BOOKS
 
 const endpoint = client.databaseURL;
 
 // TODO: GET BOOKS
-const getBooks = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books.json`, {
-    methos: 'GET',
-    headers: {
-      'Copntent-Type': 'application/json'
-    }
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
-    .catch(reject);
-});
+const getBooks = () => {};
 
 // TODO: DELETE BOOK
-const deleteBook = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books/${firebaseKey}.json`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(data))
-    .catch(reject);
-});
+const deleteBook = () => {};
 
 // TODO: GET SINGLE BOOK
 const getSingleBook = () => {};
@@ -51,7 +30,6 @@ const booksOnSale = () => new Promise((resolve, reject) => {
     .then((data) => resolve(Object.values(data)))
     .catch(reject);
 });
-
 // TODO: STRETCH...SEARCH BOOKS
 
 export {

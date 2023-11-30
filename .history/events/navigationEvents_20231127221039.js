@@ -1,6 +1,5 @@
+import { booksOnSale, showBooks , getBooks } from '../api/bookData';
 import { signOut } from '../utils/auth';
-import { getBooks, booksOnSale } from '../api/bookData';
-import { showBooks } from '../pages/books';
 
 // navigation events
 const navigationEvents = () => {
@@ -10,14 +9,13 @@ const navigationEvents = () => {
 
   // TODO: BOOKS ON SALE
   document.querySelector('#sale-books').addEventListener('click', () => {
+    booksOnSale.then(showBooks);
     console.warn('CLICKED SALE BOOKS');
-    booksOnSale().then(showBooks);
   });
 
   // TODO: ALL BOOKS
   document.querySelector('#all-books').addEventListener('click', () => {
     getBooks().then(showBooks);
-    getBooks().then((books) => console.warn(books));
     console.warn('CLICKED ALL BOOKS');
   });
 
